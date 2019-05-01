@@ -1,5 +1,6 @@
 import sqlite3
 
+
 def connect():
     """Set up a connection with the database."""
     conn_obj = sqlite3.connect("books.db")
@@ -13,6 +14,7 @@ def connect():
     conn_obj.commit()
     conn_obj.close()
 
+
 def insert(title, author, year, isbn):
     """Insert entry into database."""
     conn_obj = sqlite3.connect("books.db")
@@ -22,6 +24,7 @@ def insert(title, author, year, isbn):
     conn_obj.commit()
     conn_obj.close()
 
+
 def view():
     """View all database entries."""
     conn_obj = sqlite3.connect("books.db")
@@ -30,6 +33,7 @@ def view():
     rows = cur_obj.fetchall()
     conn_obj.close()
     return rows
+
 
 def update(id, title, author, year, isbn):
     """Update a database entry."""
@@ -45,6 +49,7 @@ def update(id, title, author, year, isbn):
     conn_obj.commit()
     conn_obj.close()
 
+
 def delete(id):
     """Delete a database entry."""
     conn_obj = sqlite3.connect("books.db")
@@ -54,7 +59,8 @@ def delete(id):
     conn_obj.commit()
     conn_obj.close()
 
-def search(title = "", author = "", year = "", isbn = ""):
+
+def search(title="", author="", year="", isbn=""):
     """Search for a database entry."""
     conn_obj = sqlite3.connect("books.db")
     cur_obj = conn_obj.cursor()
@@ -66,4 +72,6 @@ def search(title = "", author = "", year = "", isbn = ""):
     conn_obj.close()
     return rows
     
-connect()
+    
+if __name__ == '__main__':
+    connect()
