@@ -1,4 +1,4 @@
-# Book Directory
+# Book Directory GUI using Tkinter
 *Book Directory* is a database app built with Python, Tkinter, and SQLite.
 
 ## How to Use
